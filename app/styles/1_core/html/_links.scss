@@ -1,0 +1,28 @@
+///*------------------------------------*\
+//    #CORE/HTML - LINKS
+//\*------------------------------------*/
+
+a {
+  color: $brand;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:active {}
+
+  &:focus,
+  &:hover {
+    color: darken($brand,10%);
+  }
+  &.button {
+    @include font-size(20,20);
+    background: $brand;
+    color: $white;
+    display: inline-block;
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 15px 40px;
+    &:hover {
+      background: darken($brand, 10%);
+    }
+  }
+}

@@ -1,0 +1,116 @@
+///*------------------------------------*\
+//    #CORE - ICONS
+//\*------------------------------------*/
+/* Note: Will be replaced once SVG feature branch is completed */
+[class*=' icon-'],
+[class^='icon-'] {
+  &:before {
+    display: inline-block;
+    font-family: 'icomoon';
+    font-size: 2rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    margin-right: 1.5rem;
+    speak: none;
+    text-transform: none;
+    vertical-align: middle;
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.icon-menu-close {
+  &:before {
+    content: "\e906";
+  }
+}
+
+.icon-logo {
+  &:before {
+    content: "\e905";
+  }
+}
+
+.icon-share {
+  &:before {
+    content: "\e900";
+  }
+}
+
+.icon-search {
+  &:before {
+    content: "\e901";
+  }
+}
+
+.icon-menu {
+  &:before {
+    content: "\e902";
+  }
+}
+
+.icon-chevron-down {
+  &:before {
+    content: "\e903";
+  }
+}
+
+.icon-arrow-right {
+  &:before {
+    content: "\e904";
+  }
+}
+
+.icon-facebook {
+  &:before {
+    content: "\ea90";
+  }
+}
+
+.icon-linkedin {
+  &:before {
+    content: "\e907";
+  }
+}
+
+.icon-twitter {
+  &:before {
+    content: "\ea96";
+  }
+}
+
+.icon-vimeo {
+  &:before {
+    content: "\eaa0";
+  }
+}
+
+.icon-youtube {
+  &:before {
+    content: "\ea9d";
+  }
+}
+
+.icon-instagram {
+  &:before {
+    content: "\ea92";
+  }
+}
+
+.icon-compass {
+  &:before {
+    content: "\e949";
+  }
+}
+
+.icon-phone {
+  &:before {
+    content: "\e942";
+  }
+}

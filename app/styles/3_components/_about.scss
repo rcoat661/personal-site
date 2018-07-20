@@ -1,0 +1,364 @@
+.about {
+  background: $white;
+  position: relative;
+
+  #ig-feed {
+    display: flex;
+    flex-wrap: wrap;
+
+    .feed-item {
+      background: $grey--lightest;
+      border: 1px solid $grey--light;
+      flex-basis: 100%;
+      margin: $spacing-unit 0;
+      max-width: 100%;
+      position: relative;
+      @include breakpoint($tablet) {
+        margin: 2%;
+        flex-basis: 46%;
+        max-width: 46%;
+      }
+      @include breakpoint($desktop) {
+        margin: 1%;
+        flex-basis: 23%;
+        max-width: 23%;
+      }
+      &.video {
+        video {
+          display: block;
+          margin: 0;
+          width: 100%;
+        }
+        a {
+          border: 0;
+          height: auto;
+          background: none;
+        }
+      }
+      .media-container {
+        overflow: hidden;
+        position: relative;
+        @include breakpoint($tablet) {
+          max-height: 433px;
+        }
+        @include breakpoint($desktop) {
+          max-height: 287px;
+        }
+      }
+      .link {
+        @include font-size(0,0);
+        display: inline-block;
+        height: 18px;
+        position: relative;
+        vertical-align: middle;
+        width: 18px;
+        z-index: 1;
+        a {
+          color: $black;
+          display: inline-block;
+          height: 20px;
+          text-align: center;
+          transition: background 0.2s ease;
+          width: 18px;
+          position: absolute;
+          &:hover,
+          &:focus {
+            color: $brandDark;
+          }
+          .icon {
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            &:before {
+              font-size: 1.3rem;
+              font-weight: 600;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .likes {
+        display: inline-block;
+        height: 20px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 20px;
+        z-index: 1;
+        .count {
+          color: $white;
+          font-size: 8px;
+          margin-top: 0px;
+          font-weight: 700;
+          left: 0;
+          position: absolute;
+          top:50%;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+        .heart {
+          background-color: $red--neon;
+          display: inline-block;
+          height: 12px;
+          position: relative;
+          top: 0px;
+          transform: rotate(-45deg);
+          width: 12px;
+        }
+
+        .heart:before,
+        .heart:after {
+          content: "";
+          background-color: $red--neon;
+          border-radius: 50%;
+          height: 12px;
+          position: absolute;
+          width: 12px;
+        }
+
+        .heart:before {
+          top: -6px;
+          left: 0;
+        }
+
+        .heart:after {
+          left: 6px;
+          top: 0;
+        }
+      }
+      img {
+        border-radius: 0;
+        height: auto;
+        margin: 0;
+        position: relative;
+        width: 100%;
+        width: auto;
+        filter: grayscale(100%);
+      }
+      .content {
+        span.location {
+          display: block;
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .caption {
+          backface-visibility: hidden;
+          background: $grey--lightest;
+          display: inline-block;
+          color: $black;
+          padding: $spacing-unit;
+          position: relative;
+          text-align: left;
+          width: 100%;
+          h4 {
+            border-top: 1px solid rgba($black,0.5);
+            font-size: 1.6rem!important;
+            line-height: 1.4!important;
+            margin-bottom: 0;
+            margin-top: $spacing-unit--s;
+            padding-top: $spacing-unit--s;
+          }
+        }
+      }
+    }
+  }
+
+  .intro-svg {
+    left: 50%;
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+
+    svg {
+      width: 50px;
+      transform: rotate(-180deg);
+
+      .cls-1 {
+        fill: $black--light!important;
+      }
+    }
+  }
+
+  .wrapper {
+    padding-top: $spacing-unit--xl;
+    padding-bottom: $spacing-unit--xl;
+    text-align: center;
+    @include breakpoint($tablet) {
+      padding-top: ($spacing-unit--xxl + $spacing-unit--s);
+      padding-bottom: ($spacing-unit--xxl + $spacing-unit--s);
+    }
+
+    img:first-child {
+      border-radius: 50%;
+      display: block;
+      height: 160px;
+      margin: 0 auto $spacing-unit;
+      position: relative;
+      width: 160px;
+    }
+
+    h2 {
+      color: $brand;
+      display: block;
+      margin: 0 auto;
+      padding: $spacing-unit--xs;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .container--content {
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+    position: relative;
+    width: 100%;
+
+    p {
+      color: $brandDark;
+    }
+  }
+
+  .tot-section {
+    .wrapper {
+      padding: 30px 0;
+    }
+
+    a[data-module="accordion"] {
+      border-bottom: 2px solid $grey--light;
+      color: $black--light;
+      display: inline-block;
+      font-weight: 500;
+      padding: $spacing-unit--s $spacing-unit $spacing-unit--s 0;
+      position: relative;
+      text-align: left;
+      transition: color 0.2s ease;
+      width: 100%;
+
+      &:focus,
+      &:hover {
+        color: $brand;
+      }
+
+      &.active {
+        .icon {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      .icon {
+        @include font-size(14, 0);
+        padding: 0;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: transform 0.2s ease;
+
+        &:before {
+          @include font-size(14, 14);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  div#football {
+    background: $grey--lightest;
+    border-radius: 0;
+    display: block;
+    left: 0;
+    height: auto;
+    width: 100%;
+
+    img {
+      left: 0;
+      padding: 0;
+      margin: $spacing-unit--s 0;
+      max-width: 50px;
+      height: auto;
+      display: inline-block;
+    }
+
+    .table-header,
+    .table-item {
+      @include font-size(16,20);
+      color: $white;
+      display: flex;
+      text-align: center;
+      padding: $spacing-unit--s 0;
+      width: 100%;
+
+      .losses,
+      .points,
+      .position,
+      .team,
+      .wins {
+        flex-basis: 20%;
+        max-width: 20%;
+      }
+
+      span {
+        @include font-size(12,18);
+        color: $blue--tottenham;
+        display: block;
+        font-weight: bold;
+        margin-bottom: $spacing-unit--s;
+        @include breakpoint($tablet) {
+          @include font-size(14,20);
+        }
+
+        &.number {
+          background: $white;
+          border-radius: 50%;
+          color: $blue--tottenham;
+          display: block;
+          height: 30px;
+          line-height: 30px!important;
+          margin: 0 auto;
+          width: 30px;
+        }
+      }
+    }
+
+    .table-header {
+      background: $grey--light;
+
+      span {
+        color: $blue--tottenham;
+        margin-bottom: 0;
+      }
+    }
+
+    .table-item {
+      align-items: center;
+      background: lighten($grey--lightest, 3%);
+      border-bottom: 1px solid $grey--light;
+
+      &.spurs {
+        background: $blue--tottenham;
+
+        .teamname {
+          color: $white;
+        }
+      }
+
+      .team {
+        span {
+          margin-bottom: 0;
+        }
+      }
+
+      .teamname {
+        @include breakpoint(max-width ($tablet - 1)) {
+          @include font-size(12,12);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.contact {
+  padding: $spacing-unit--xl 0;
+  @include breakpoint($tablet) {
+    padding: ($spacing-unit--xxl + $spacing-unit--s) 0;
+  }
+  .wrapper {
+    font-size: 0;
+    line-height: 0;
+  }
+  .content {
+    display: inline-block;
+    padding-right: 0;
+    text-align: left;
+    width: 100%;
+    @include breakpoint($tablet) {
+      padding-right: 15%;
+      width: 50%;
+    }
+    h2 {
+      text-align: left;
+    }
+  }
+  ul {
+    display: inline-block;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      @include breakpoint($desktop) {
+        width: 50%;
+      }
+      &:last-child {
+        a {
+          background: $brand;
+          color: $white;
+          font-weight: 600;
+          &:hover {
+            background: darken($brand,15%);
+          }
+        }
+      }
+      a {
+        display: inline-block;
+        font-size: 25px;
+        line-height: 33px;
+        padding: ($spacing-unit + 0.5);
+        width: 100%;
+        @include breakpoint($desktop) {
+          padding: ($spacing-unit--xl - 0.5);
+        }
+        &:before {
+          font-size: 30px;
+          margin: 0;
+        }
+        &.icon-facebook {
+          background: $blue--facebook;
+          color: $white;
+          &:hover {
+            background: darken($blue--facebook, 10%);
+          }
+        }
+        &.icon-instagram {
+          background: $orange--instagram;
+          color: $black;
+          &:hover {
+            background: darken($orange--instagram, 10%);
+          }
+        }
+        &.icon-linkedin {
+          background: $blue--linkedin;
+          color: $white;
+          &:hover {
+            background: darken($blue--linkedin, 10%);
+          }
+        }
+      }
+    }
+  }
+}

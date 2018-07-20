@@ -1,0 +1,47 @@
+///*------------------------------------*\
+//    #CORE/HTML - PAGE
+//\*------------------------------------*/
+
+* {
+  box-sizing: border-box; // establishes border-box model for all elements
+  word-wrap: normal;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Remove default tappable touch color in iOS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: $white;
+  font-size: 62.5%; // Sets up the Base 10 stuff
+  height: 100%;
+  // scroll-behavior: smooth;
+
+  &.nav-is-open,
+  &.nav-is-open body {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include font-size(18,24);
+  color: $black;
+  font-family: $fallbackSans;
+  margin: 0;
+  overflow-x: hidden;
+  @include breakpoint($tablet) {
+     @include font-size(20,24);
+  }
+
+  .fonts-loaded & {
+    font-family: $sans;
+    font-weight: 400;
+  }
+}
+
+.main {
+  @include margin-control($padding: true, $size: 'large');
+
+  &.big-padding {
+    @include margin-control($padding: true, $size: 'extra-large');
+  }
+}

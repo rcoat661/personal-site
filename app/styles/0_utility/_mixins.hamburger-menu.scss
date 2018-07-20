@@ -1,0 +1,51 @@
+@mixin hamburger-menu($type, $bg-color, $menu-color, $page:'') {
+
+  @if $type == 'standard_active' {
+    background: $bg-color;
+    background: rgba($bg-color, 0.95);
+    .global-header__logo{
+      img{
+        opacity: 0;
+        visibility: hidden;
+      }
+      span:before{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .hamburger-inner{
+      &,
+      &::before,
+      &::after {
+        background-color: $menu-color;
+      }
+    }
+  }
+
+  @if $type == 'standard' {
+    background: $bg-color;
+    background: rgba($bg-color, 0.95);
+
+    .global-header__logo{
+      img{
+        opacity: 1;
+        visibility: visible;
+      }
+      span:before{
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+
+    .hamburger-inner{
+      &,
+      &::before,
+      &::after {
+        background-color: $menu-color;
+      }
+    }
+  }
+
+}
+

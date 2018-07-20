@@ -1,0 +1,133 @@
+.global-header{
+  .sticky-container{
+    background: none;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    img{
+      background: transparent;
+    }
+  }
+  .top-nav{
+    height: 100px;
+    &.is-active {
+      @media(max-width: 400px){
+        .global-header__logo {
+          transform: translate(-80px,-35px);
+        }
+      }
+      ul{
+        opacity: 1;
+        transform: translate(-57px, -50%);
+        visibility: visible;
+        li{
+          transform: translateX(0);
+        }
+        @include breakpoint($desktop){
+          opacity: 1;
+          transform: translate(-77px, -50%);
+          visibility: visible;
+          li{
+            transform: none;
+          }
+        }
+      }
+    }
+    ul{
+      display: inline-block;
+      height: 47px;
+      font-size: 0;
+      opacity: 0;
+      margin: 0;
+      transform: translate(0px,-50%);
+      transition: .6s cubic-bezier(.3,0,0,1.3);
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      text-align: right;
+      visibility: hidden;
+      width: auto;;
+      @include breakpoint($desktop){
+        height: 50px;
+        right: 0;
+        text-align: center;
+        width: auto;
+      }
+      li{
+        display: inline-block;
+        padding: 0;
+        transition: .5s cubic-bezier(.3,0,0,1.3);
+        transform: translateX(0);
+        @include breakpoint($desktop){
+          padding: 0;
+          transform: translateX(0);
+          transition: none;
+          vertical-align: middle;
+        }
+        a{
+          @include font-size(18,18);
+          background: transparent;
+          color: $white;
+          left: 0;
+          font-weight: 600;
+          margin: 0 10px;
+          padding: 10px 0;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          top: 0;
+          transition: all 0.3s ease-in-out;
+          width: auto;
+          &:after {
+            content:"";
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            height: 2px;
+            opacity: 0;
+            transform: translateY(5px);
+            background: $brand;
+          }
+          &:hover {
+            &:after {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          @include breakpoint($desktop){
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+  a.global-header__logo{
+    background-color: transparent;
+    left: 15px;
+    width: 55px;
+    position: absolute;
+    top: 50%;
+    transition: .6s cubic-bezier(.3,0,0,1.3);
+    transform: translateY(-50%);
+    z-index: 9;
+  }
+  button.hamburger{
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+    &:focus{
+      outline: none;
+    }
+  }
+}

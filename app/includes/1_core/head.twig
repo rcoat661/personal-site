@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js">
+  {% set pageTitle = "Ryan Coates | Boston UI Developer" %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ pageTitle | escape }}</title>
+
+    <meta name="description" content="I'm a UI/Front-end Developer from Connecticut who currently lives and works in Boston.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="canonical" href="https://ryanccoates.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ryan Coates" />
+    <meta property="og:description" content="Professional UI Developer" />
+    <meta property="og:url" content="https://ryanccoates.com/" />
+    <meta property="og:site_name" content="Ryan Coates" />
+    <meta property="og:image" content="/images/ryan-bg-3.jpg" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script>
+      if (sessionStorage.fontsLoaded === 'true') {
+        document.documentElement.classList.add("fonts-loaded");
+      } else {
+        var script = document.createElement("script");
+        script.src = "/scripts/fontloader.built.js";
+        script.async = true;
+        document.head.appendChild(script);
+      };
+    </script>
+
+    <link rel="stylesheet" href="/styles/screen.css">
+
+    <script src="/scripts/libs/modernizr.js"></script>
+
+  </head>

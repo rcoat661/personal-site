@@ -1,0 +1,59 @@
+///*------------------------------------*\
+//    #UTILITY - COLORS
+//\*------------------------------------*/
+/* Note: the palette function is included here (vs in the tools directory)
+ * since both of these needed in order to work properly
+ */
+@function palette($palette, $tone: 'base') {
+   @return map-get(map-get(map-get($palettes, colors), $palette), $tone);
+}
+$palettes: (
+  colors: (
+    black: (
+      light: #212121,
+      base: #1c2024
+    ),
+    blue: (
+      facebook: #3b5998,
+      linkedin: #007bb5,
+      tottenham: #001C58
+    ),
+    green: (
+      neon: #45e687
+    ),
+    grey: (
+      lightest: #f3f3f3,
+      light: #dfe4e5,
+      dark: #9ca5a8,
+      darkest: #898c8f
+    ),
+    orange: (
+      instagram: #e95950
+    ),
+    red:(
+      neon: #ff4d56
+    ),
+    white: (
+      base: #fff,
+      off: #f6f9fa
+    )
+  )
+);
+$black: palette(black, base);
+$black--light: palette(black, light);
+$blue--facebook: palette(blue, facebook);
+$blue--linkedin: palette(blue, linkedin);
+$blue--tottenham: palette(blue, tottenham);
+$green--neon: palette(green, neon);
+$grey--light: palette(grey, light);
+$grey--lightest: palette(grey, lightest);
+$grey--dark: palette(grey, dark);
+$grey--darkest: palette(grey, darkest);
+$offwhite: palette(white, off);
+$orange--instagram: palette(orange, instagram);
+$red--neon: palette(red, neon);
+$white: palette(white);
+
+// brand colors //
+$brand: #00BFA5;
+$brandDark: #06393A;

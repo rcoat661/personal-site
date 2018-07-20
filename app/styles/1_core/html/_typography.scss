@@ -1,0 +1,21 @@
+///*------------------------------------*\
+//    #CORE/HTML - TYPOGRAPHY
+//\*------------------------------------*/
+
+em {
+  font-style: normal;
+}
+
+strong {
+  font-weight: 700;
+}
+
+p {
+  @include font-size(18, 25);
+  color: $brandDark;
+  font-family: $sans;
+  font-weight: 400;
+  @include breakpoint($tablet) {
+     @include font-size(20, 30);
+  }
+}

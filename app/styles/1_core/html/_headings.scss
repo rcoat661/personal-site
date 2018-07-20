@@ -1,0 +1,63 @@
+///*------------------------------------*\
+//    #CORE/HTML - HEADING ELEMENTS
+//\*------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1, h2{
+  @include font-size(45,45);
+  color: $grey--dark;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-align: center;
+  @include breakpoint($large-tablet) {
+    @include font-size(65,65);
+  }
+}
+
+h2{
+  @include font-size(35,35);
+  color: $black;
+  font-weight: 600;
+  letter-spacing: -1px;
+  span{
+    color: $brand;
+  }
+  @include breakpoint($large-tablet) {
+    @include font-size(40,40);
+  }
+}
+
+
+h3 {
+  @include font-size(30,40);
+  font-weight: 900;
+  @include breakpoint($large-tablet) {
+     @include font-size(40,50);
+  }
+}
+
+h4 {
+  @include font-size(25,35);
+  font-weight: 400;
+  @include breakpoint($large-tablet) {
+     @include font-size(30,40);
+  }
+}
+
+h5 {
+  @include font-size(25,35);
+  font-weight: 900;
+  @include breakpoint($large-tablet) {
+     @include font-size(30,40);
+  }
+}
+
+h6 {}

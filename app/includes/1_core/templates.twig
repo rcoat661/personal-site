@@ -1,0 +1,31 @@
+{# index.twig #}
+{% extends 'layout.twig' %}
+{% set json = templates %}
+
+{% block page %}
+  <section class="wrapper">
+    <h1>{{ title }}</h1>
+    <h2>{{ contents }}</h2>
+
+    <h5>Utility</h5>
+    <ul>
+      {% for item in json.utilityLinks %}
+        <li>
+          <a href="{{ item.link }}">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h5>Layouts</h5>
+    <ul>
+      {% for item in json.layoutLinks %}
+        <li>
+          <a href="{{ item.link }}">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p>{{ variable_from_markdown_file }}</p>
+  </section>
+
+{% endblock %}

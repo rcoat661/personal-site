@@ -1,0 +1,47 @@
+{
+  "title": "We Are Genuine | 2017",
+  "utilityLinks": [
+    {
+      "name": "Templates",
+      "link": "/_templates.html"
+    },
+    {
+      "name": "Base Style Guide",
+      "link": "/_style-guide.html"
+    }
+  ],
+  "layoutLinks": [
+    {
+      "name": "T01 - Homepage",
+      "link": "/"
+    },
+    {
+      "name": "T02 - Work With Us",
+      "link": "/work-with-us"
+    },
+    {
+      "name": "T03 - Work",
+      "link": "/our-work"
+    },
+    {
+      "name": "T04 - Case Study",
+      "link": "/case-studies/welchs"
+    },
+    {
+      "name": "T05 - Career Detail",
+      "link": "/careers/creative-director/index.html"
+    },
+    {
+      "name": "T06 - Contact Us",
+      "link": "/contact-us"
+    },
+    {
+      "name": "T07 - Blog Landing",
+      "link": "/blog/"
+    },
+    {
+      "name": "T08 - Blog Detail",
+      "link": "/blog/distribution-exploration-thunder-and-lightning/index.html"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+// Transition Mixin
+// Mixin Parameters: $seconds, $easing
+@mixin transition($seconds: .15s, $easing: ease-in-out) {
+  transition: all $seconds $easing;
+}

@@ -1,0 +1,53 @@
+CONTENT MODEL:
+
+Author
+  - Email (short text)
+  - Display Name (short text)
+  - First Name (short text)
+  - Last Name (short text)
+  - Wordpress Login (short text)
+  - Department (reference)
+
+Career
+  - Title
+  - Department (reference)
+  - Location (short text)
+  - Description (markdown)
+  - Content (markdown)
+  - URL (short text / url)
+
+Case Study
+  (Awaiting final design)
+
+Category
+  - Name
+  - Slug
+
+Department
+  - Name (short text)
+    TODO: Confirm these are correct:
+    - Account Services
+    - Copy
+    - Delivery
+    - Design
+    - Development
+    - Experiential
+    - Media
+    - Operations
+    - Strategy
+    - UX
+    - Video
+
+Post
+  - Title (short text)
+  - Date (short text / date)
+  - Author (reference)
+  - Category (reference)
+  - Tag (reference)
+  - Featured (boolean)
+  - Content (markdown)
+  - Featured Image (media)
+
+Tag
+  - Name
+  - Slug

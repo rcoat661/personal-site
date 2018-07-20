@@ -1,0 +1,13 @@
+{% include 'head.twig' %}
+
+  <body class="{{ bodyClass }}">
+
+    {% include '../4_regions/header.twig' %}
+
+    <main>{% block page %}{% endblock %}</main>
+
+    {% include '../4_regions/footer.twig' %}
+
+  </body>
+
+</html>

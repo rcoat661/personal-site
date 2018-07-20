@@ -1,0 +1,111 @@
+{
+  "og": {
+    "title": "Ryan Coates",
+    "site_name": "Ryan Coates",
+    "description": "Ryan Coates | Senior UI Developer | Boston MA",
+    "image": ""
+  },
+  "about": {
+    "description": "I'm a UI/Front-end Developer from Connecticut who currently lives and works in Boston. You can find me developing websites <a href=\"http://www.wearegenuine.com\" target=\"_blank\">@Genuine</a>, biking around Boston, playing guitar or cheering on my favorite football team, Tottenham Hotspurs. (see where they currently stand in the EPL table below)</p>",
+    "table_button_text": "<span>EPL Table <span class=\"year\"></span></span><span class=\"icon icon-chevron-down\"></span>"
+  },
+  "hero": {
+    "background_image": "/images/ryan-bg-3.jpg",
+    "header": "Ryan <span>Coates</span>",
+    "description": "UI Developer who currently works at <a href=\"http://www.wearegenuine.com\" target=\"_blank\">Genuine</a> in Boston, MA."
+  },
+  "music": {
+    "header": "<span>Current</span> Music",
+    "description":"Top artist via Spotify.",
+    "description_latest": "Latest listens:",
+    "iframe_src": "https://embed.spotify.com/follow/1/?uri=spotify:user:1253799845&size=detail&theme=light"
+  },
+  "work": {
+    "background_image": "/images/ryan-bg-1.jpg",
+    "header": "Work",
+    "description": "I am a Senior UI Developer <a target=\"_blank\" href=\"http://wearegenuine.com\">@Genuine</a> in Boston, MA. In a typical days work I lead front-end projects, collaborate with teams and always look for ways to improve my code. I have been a front-end developer for over 6+ years.",
+    "list_header": "Skill Set",
+    "list": [
+      {
+        "content": "HTML5"
+      },
+      {
+        "content": "Twig"
+      },
+      {
+        "content": "CSS3"
+      },
+      {
+        "content": "SCSS"
+      },
+      {
+        "content": "LESS"
+      },
+      {
+        "content": "Javascript"
+      },
+      {
+        "content": "jQuery"
+      },
+      {
+        "content": "AJAX"
+      },
+      {
+        "content": "JSON"
+      },
+      {
+        "content": "Angular"
+      },
+      {
+        "content": "React"
+      },
+      {
+        "content": "PHP"
+      },
+      {
+        "content": "Drupal"
+      },
+      {
+        "content": "Wordpress"
+      },
+      {
+        "content": "Photoshop"
+      },
+      {
+        "content": "Sketch"
+      },
+      {
+        "content": "Gulp"
+      },
+      {
+        "content": "GIT"
+      }
+    ],
+    "cta": {
+      "link": "mailto:rcoat661@gmail.com",
+      "text": "Let's Chat"
+    }
+  },
+  "contact": {
+    "header": "Connect",
+    "description": "Feel free to connect with me on social media or click \"Let's Chat\" if you want to email me!",
+    "socialItems": [
+      {
+        "link": "https://www.facebook.com/ryan.c.coates",
+        "class": "facebook"
+      },
+      {
+        "link": "https://www.instagram.com/ryanccoates/",
+        "class": "instagram"
+      },
+      {
+        "link": "https://www.linkedin.com/in/ryanccoates/",
+        "class": "linkedin"
+      },
+      {
+        "name": "Lets Chat",
+        "link": "mailto:rcoat661@gmail.com"
+      }
+    ]
+  }
+}
