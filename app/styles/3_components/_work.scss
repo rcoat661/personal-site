@@ -1,47 +1,22 @@
-.work{
+.work {
+  margin: 30px 0;
+  margin-top: -30px;
   padding: 0;
-  font-size: 0;
-  line-height: 0;
-  background: lighten($grey--lightest, 2%);
   position: relative;
-  h2{
-    color: $black;
-    margin-bottom: $spacing-unit--l;
-    position: relative;
-  }
+  text-align: center;
 
-  .image-wrapper {
-    display: none;
-    background-size: cover!important;
-    background-position: center!important;
-    background-repeat: no-repeat!important;
-    vertical-align: top;
-    position: absolute;
-    height: 100%;
-    overflow: hidden;
-    width: 50%;
-    @include breakpoint($desktop) {
-      display: inline-block;
-    }
-    img {
-      @include breakpoint($tablet) {
-        z-index: -1;
-      }
-    }
+  @include breakpoint($tablet) {
+    margin: 60px 0;
+    margin-top: -30px;
   }
 
   .wrapper{
-    @include font-size(0,0);
+    border-radius: 26px;
     display: inline-block;
-    padding: $spacing-unit--xl ($spacing-unit--l - 0.5);
     text-align: left;
     position: relative;
-    width: 100%;
-    @include breakpoint($desktop) {
-      left: 50%;
-      padding: $spacing-unit--xl;
-      width: 50%;
-    }
+    width: 1300px;
+    max-width: 100%;
     .intro-svg {
       left: 0;
       position: absolute;
@@ -55,12 +30,20 @@
         display: none;
       }
     }
+    p {
+      color: $white;
+      line-height: 25px!important;
+      a {
+        color: #fff;
+      }
+    }
     h2 {
       text-align: left;
       margin-bottom: 0;
     }
     h4 {
       @include font-size(25,20);
+      color: $white;
       margin-top: $spacing-unit--l;
     }
     ul {
@@ -70,15 +53,202 @@
       flex-wrap: wrap;
       padding-left: 0;
       li {
-        background: $grey--light;
+        background: $white;
         flex-basis: 48%;
         margin: 1%;
         max-width: 48%;
         padding: $spacing-unit;
         text-align: center;
         @include breakpoint($desktop) {
-          flex-basis: 23%;
-          max-width: 23%;
+          flex-basis: 110px;
+          max-width: 110px;
+        }
+      }
+    }
+  }
+
+  #ig-feed {
+    display: flex;
+    flex-wrap: wrap;
+
+    .feed-item {
+      background: $grey--lightest;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
+      flex-basis: 100%;
+      margin: $spacing-unit 0;
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      @include breakpoint($tablet) {
+        margin: 2%;
+        flex-basis: 46%;
+        max-width: 46%;
+      }
+
+      @include breakpoint($desktop) {
+        margin: 1%;
+        flex-basis: 23%;
+        max-width: 23%;
+      }
+
+      &:hover {
+        .content {
+          transform: translateY(0);
+        }
+      }
+
+      &.video {
+        video {
+          display: block;
+          margin: 0;
+          width: 100%;
+        }
+
+        a {
+          border: 0;
+          height: auto;
+          background: none;
+        }
+      }
+
+      .media-container {
+        overflow: hidden;
+        position: relative;
+
+        @include breakpoint($tablet) {
+          max-height: 433px;
+        }
+
+        @include breakpoint($desktop) {
+          max-height: 287px;
+        }
+
+        img {
+          @include breakpoint($desktop) {
+            position: relative;
+            z-index: -1;
+          }
+        }
+      }
+
+      .link {
+        display: inline-block;
+
+        a {
+          background: transparent;
+          border: 1px solid $white;
+          padding: 7px 20px;
+          color: $white;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0.5px;
+          transition: background-color .15s ease, color .15s ease;
+
+          &:hover {
+            background: $white;
+            color: $green--neon;
+          }
+        }
+      }
+
+      .likes {
+        display: inline-block;
+        height: 20px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 20px;
+        z-index: 1;
+
+        .count {
+          color: $white;
+          font-size: 8px;
+          margin-top: 0px;
+          font-weight: 700;
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+
+        .heart {
+          background-color: $red--neon;
+          display: inline-block;
+          height: 12px;
+          position: relative;
+          top: 0px;
+          transform: rotate(-45deg);
+          width: 12px;
+        }
+
+        .heart:before,
+        .heart:after {
+          content: "";
+          background-color: $red--neon;
+          border-radius: 50%;
+          height: 12px;
+          position: absolute;
+          width: 12px;
+        }
+
+        .heart:before {
+          top: -6px;
+          left: 0;
+        }
+
+        .heart:after {
+          left: 6px;
+          top: 0;
+        }
+      }
+
+      img {
+        border-radius: 0;
+        height: auto;
+        margin: 0;
+        position: relative;
+        width: auto;
+      }
+
+      .content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        transform: translateY(0);
+        transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1.3);
+
+        span.location {
+          display: block;
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .caption {
+          display: inline-block;
+          color: $white;
+          padding: $spacing-unit $spacing-unit--l;
+          position: relative;
+          text-align: center;
+          width: 100%;
+
+          h4 {
+            border-top: 1px solid rgba($black, 0.5);
+            font-size: 1.6rem !important;
+            line-height: 1.4 !important;
+            margin-bottom: 0;
+            margin-top: $spacing-unit--s;
+            padding-top: $spacing-unit--s;
+          }
         }
       }
     }

@@ -1,13 +1,11 @@
 <div class="contact" id="contact">
   <div class="wrapper">
-    <div class="content">
-      <h2>{{header}}</h2>
-      <p>{{description}}</p>
+    <div class="contact__image" style="background-image: url('{{imageSrc1}}')"></div>
+    <div class="contact__image" style="background-image: url('{{imageSrc2}}')"></div>
+    <div class="contact__image" style="background-image: url('{{imageSrc3}}')"></div>
+    <div class="contact__content">
+      <p><span>Interested in owning your own?</span>Name the city and I'll name the price!</p>
+      <a class="btn" href="mailto:rcoat661@gmail.com?subject=John's%20Jawns%20Request&body=Hi%20John%2C%20%0AI%20would%20like%20to%20request%20a%20Johns%20Jawns%20for%20the%20city%20of%20%7B%7Bcity%7D%7D%2C%20%20please%20let%20me%20know%20what%20a%20fair%20price.%0A%0AStay%20cool%2C%0A%0A%7B%7Bname%7D%7D%0A%7B%7Bemail%7D%7D%0A%7B%7Bphone%20%7C%20not%20required%7D%7D">Request a John's Jawn</a>
     </div>
-    <ul class="social">
-      {% for item in socialItems %}
-        <li><a href="{{item.link}}" target="_blank" {% if item.class %}class="icon-{{item.class}}"{% endif %}>{{ item.name }}</a></li>
-      {% endfor %}
-    </ul>
   </div>
 </div>

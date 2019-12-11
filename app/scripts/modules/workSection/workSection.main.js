@@ -2,15 +2,12 @@
 
 import $ from 'jquery';
 
-module.exports = class AboutSection {
+module.exports = class WorkSection {
   constructor($el) {
     this.$el = $el;
     this.$spinner = this.$el.find('.spinner');
-    let $dropCapText = this.$el.find('.about__content-description p');
     let $feed = this.$el.find('#ig-feed');
 
-    // set dropCap
-    this.setDropCap($dropCapText)
 
     // ig gallery feed
     $.ajax({
@@ -22,7 +19,7 @@ module.exports = class AboutSection {
           this.initLoadSuccess();
           this.loadFeed($feed, data);
           let accordionTrigger = this.$el.find('.accordion-trigger');
-          accordionTrigger.each((index,item) => {
+          accordionTrigger.each((index, item) => {
             let accordionContent = $(item).next();
             let activeState = 'active';
             $(item).on('click', (e) => {
@@ -39,20 +36,21 @@ module.exports = class AboutSection {
         }
       }
     })
-  
+
   }
+
   loadFeed(feed, data) {
-    for(let i = 0; i < data.data.length ; i++) {
+    for (let i = 0; i < data.data.length; i++) {
       let value = data.data[i],
-      index = i,
-      sampleImage = '/images/sample-jawn.png';
+        index = i,
+        sampleImage = '/images/sample-jawn.jpg';
 
       if (value.type == 'video' && index <= 11) {
         feed.append(`
           <div class="feed-item video">
             <div class="media-container">
               <video autoplay loop muted poster="${sampleImage}">
-                <source src="${value.videos.standard_resolution.url}" type="video/mp4" />
+                <source src="${sampleImage}" type="video/mp4" />
               </video>
             </div>
           </div>`);
@@ -65,14 +63,6 @@ module.exports = class AboutSection {
           </div>`);
       }
     }
-  }
-
-  setDropCap(descriptionEl) {
-    let descriptionText = descriptionEl.text();
-    let firstWord = descriptionText.slice(0, descriptionText.indexOf(' '));
-    let newText = descriptionText.slice(firstWord.length);
-    newText = '<p><span class="power">' + firstWord + '</span>' + newText + '</p>';
-    descriptionEl.html(newText);
   }
 
   initLoadSuccess() {

@@ -10,20 +10,10 @@ $root-font-size: 62.5%;
 @import '0_utility/_mixins.font-size';
 @import '0_utility/_mixins.margin-control';
 @import '0_utility/_mixins.transition';
-@import '0_utility/_mixins.hamburger-menu';
 @import '0_utility/_settings.box-shadow';
 @import '0_utility/_settings.colors';
 @import '0_utility/_settings.fonts';
 @import '0_utility/_settings.z-index';
-
-
-
-$hamburger-padding-x: 0px;
-$hamburger-padding-y: 12px;
-$hamburger-layer-width: 38px;
-$hamburger-layer-color: #1c2024;
-$hamburger-layer-color-active: #fff;
-@import '0_utility/hamburgers/hamburgers';
 
 
 // ========================================================================= //

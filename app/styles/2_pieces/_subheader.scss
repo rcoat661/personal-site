@@ -1,0 +1,40 @@
+h4.sub-header {
+  @include font-size(20, 30);
+  -ms-flex-preferred-size: 100%;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  flex-basis: 100%;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  padding: 20px;
+  padding-left: 0;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  @include breakpoint($tablet) {
+    @include font-size(30, 40);
+    text-align: center;
+  }
+  span {
+    font-weight: 600;
+  }
+  a.link {
+    @include font-size(12, 24);
+    color: rgb(255, 106, 0);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    @include breakpoint($tablet) {
+      @include font-size(14, 27);
+    }
+    &:after {
+      content: ">";
+      padding-left: 10px;
+    }
+  }
+}

@@ -11,11 +11,8 @@ strong {
 }
 
 p {
-  @include font-size(18, 25);
-  color: $brandDark;
+  @include font-size(16, 20);
+  color: $grey--light;
   font-family: $sans;
   font-weight: 400;
-  @include breakpoint($tablet) {
-     @include font-size(20, 30);
-  }
 }

@@ -1,24 +1,17 @@
 {
   "og": {
-    "title": "Ryan Coates",
-    "site_name": "Ryan Coates",
-    "description": "Ryan Coates | Senior UI Developer | Boston MA",
+    "title": "John's Jawns",
+    "site_name": "John's Jawns",
+    "description": "John's Jawns | Art | Philadelphia PA",
     "image": ""
   },
   "about": {
-    "description": "I'm a UI/Front-end Developer from Connecticut who currently lives and works in Boston. You can find me developing websites <a href=\"http://www.wearegenuine.com\" target=\"_blank\">@Genuine</a>, biking around Boston, playing guitar or cheering on my favorite football team, Tottenham Hotspurs. (see where they currently stand in the EPL table below)</p>",
-    "table_button_text": "<span>EPL Table <span class=\"year\"></span></span><span class=\"icon icon-chevron-down\"></span>"
+    "imageSrc": "/images/jjs-face.png",
+    "imageAlt": "John Coates | Philadelphia PA",
+    "description": "Hello, My Name is John Coates. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   "hero": {
-    "background_image": "/images/ryan-bg-3.jpg",
-    "header": "Ryan <span>Coates</span>",
-    "description": "UI Developer who currently works at <a href=\"http://www.wearegenuine.com\" target=\"_blank\">Genuine</a> in Boston, MA."
-  },
-  "music": {
-    "header": "<span>Current</span> Music",
-    "description":"Top artist via Spotify.",
-    "description_latest": "Latest listens:",
-    "iframe_src": "https://embed.spotify.com/follow/1/?uri=spotify:user:1253799845&size=detail&theme=light"
+    "header": "<span class=\"first\">John's</span><span class=\"last\">Jawns</span>"
   },
   "work": {
     "background_image": "/images/ryan-bg-1.jpg",
@@ -87,6 +80,9 @@
     }
   },
   "contact": {
+    "imageSrc1": "/images/full-jawn-1.jpg",
+    "imageSrc2": "/images/full-jawn-2.jpg",
+    "imageSrc3": "/images/full-jawn-3.jpg",
     "header": "Connect",
     "description": "Feel free to connect with me on social media or click \"Let's Chat\" if you want to email me!",
     "socialItems": [

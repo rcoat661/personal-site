@@ -1,364 +1,256 @@
+	$glitchWidth: 300px;
+	$glitchHeight: 400px;
+	$gapHorizontal: 10px;
+	$gapVertical: 5px;
+	$timeAnim: 4s;
+	$blendMode1: none;
+	$blendMode2: none;
+	$blendMode3: none;
+	$blendMode4: none;
+	$blendMode5: overlay;
+	$blendColor1: transparent;
+	$blendColor2: transparent;
+	$blendColor3: transparent;
+	$blendColor4: transparent;
+	$blendColor5: transparent;
+
 .about {
-  background: $white;
+  background: #f5f5f5;
+  padding: 25px 0;
   position: relative;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  @include breakpoint($tablet) {
+    padding: 45px 0;
+    padding-bottom: 70px;
+    margin-top: 90px;
+  }
 
-  #ig-feed {
+  #curveUpColor {
+    position: absolute;
+    height: 50px;
+    top:-50px;
+    @include breakpoint($tablet) {
+      height: 100px;
+      top:-100px;
+    }
+    path {
+      fill: #f5f5f5;
+      stroke: #f5f5f5;
+    }
+  }
+
+  #curveDownColor {
+    position: absolute;
+    bottom: -50px;
+    height: 50px;
+    transform: rotate(180deg);
+
+    @include breakpoint($tablet) {
+      height: 100px;
+      bottom: -100px;
+    }
+
+    path {
+      fill: #f5f5f5;
+      stroke: #f5f5f5;
+    }
+  }
+
+  &__content {
+    align-items: center;
     display: flex;
-    flex-wrap: wrap;
-
-    .feed-item {
-      background: $grey--lightest;
-      border: 1px solid $grey--light;
-      flex-basis: 100%;
-      margin: $spacing-unit 0;
-      max-width: 100%;
-      position: relative;
+    @include breakpoint(max-width $tablet - 1) {
+      flex-wrap: wrap;
+    }
+    &-image {
+      display: flex;
+      justify-content: center;
+      width: 100%;
       @include breakpoint($tablet) {
-        margin: 2%;
-        flex-basis: 46%;
-        max-width: 46%;
-      }
-      @include breakpoint($desktop) {
-        margin: 1%;
-        flex-basis: 23%;
-        max-width: 23%;
-      }
-      &.video {
-        video {
-          display: block;
-          margin: 0;
-          width: 100%;
-        }
-        a {
-          border: 0;
-          height: auto;
-          background: none;
-        }
-      }
-      .media-container {
-        overflow: hidden;
-        position: relative;
-        @include breakpoint($tablet) {
-          max-height: 433px;
-        }
-        @include breakpoint($desktop) {
-          max-height: 287px;
-        }
-      }
-      .link {
-        @include font-size(0,0);
-        display: inline-block;
-        height: 18px;
-        position: relative;
-        vertical-align: middle;
-        width: 18px;
-        z-index: 1;
-        a {
-          color: $black;
-          display: inline-block;
-          height: 20px;
-          text-align: center;
-          transition: background 0.2s ease;
-          width: 18px;
-          position: absolute;
-          &:hover,
-          &:focus {
-            color: $brandDark;
-          }
-          .icon {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            &:before {
-              font-size: 1.3rem;
-              font-weight: 600;
-              margin: 0;
-            }
-          }
-        }
-      }
-      .likes {
-        display: inline-block;
-        height: 20px;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-        vertical-align: middle;
-        width: 20px;
-        z-index: 1;
-        .count {
-          color: $white;
-          font-size: 8px;
-          margin-top: 0px;
-          font-weight: 700;
-          left: 0;
-          position: absolute;
-          top:50%;
-          transform: translateY(-50%);
-          width: 100%;
-        }
-        .heart {
-          background-color: $red--neon;
-          display: inline-block;
-          height: 12px;
-          position: relative;
-          top: 0px;
-          transform: rotate(-45deg);
-          width: 12px;
-        }
-
-        .heart:before,
-        .heart:after {
-          content: "";
-          background-color: $red--neon;
-          border-radius: 50%;
-          height: 12px;
-          position: absolute;
-          width: 12px;
-        }
-
-        .heart:before {
-          top: -6px;
-          left: 0;
-        }
-
-        .heart:after {
-          left: 6px;
-          top: 0;
-        }
+        flex: 1 0 auto;
+        width: inherit;
       }
       img {
-        border-radius: 0;
-        height: auto;
-        margin: 0;
-        position: relative;
-        width: 100%;
-        width: auto;
-        filter: grayscale(100%);
+        width: 280px;
+        max-width: 100%;
       }
-      .content {
-        span.location {
-          display: block;
-          font-size: 1rem;
-          font-weight: 600;
-          text-transform: uppercase;
+    }
+    &-description {
+      @include breakpoint($tablet) {
+        flex-basis: 60%;
+        max-width: 60%;
+        padding-left: 50px;
+      }
+      p {
+        font-size: 2rem !important;
+        line-height: 3rem !important;
+        color: #313131;
+        @include breakpoint($tablet) {
+          font-size: 3rem !important;
+          line-height: 4rem !important;
         }
-        .caption {
-          backface-visibility: hidden;
-          background: $grey--lightest;
-          display: inline-block;
-          color: $black;
-          padding: $spacing-unit;
-          position: relative;
-          text-align: left;
-          width: 100%;
-          h4 {
-            border-top: 1px solid rgba($black,0.5);
-            font-size: 1.6rem!important;
-            line-height: 1.4!important;
-            margin-bottom: 0;
-            margin-top: $spacing-unit--s;
-            padding-top: $spacing-unit--s;
+        .power {
+          font-family: $rockSalt;
+          font-size: 30px;
+          line-height: 30px;
+          @include breakpoint($tablet) {
+            font-size: 50px;
+            line-height: 50px;
           }
         }
       }
     }
   }
 
-  .intro-svg {
-    left: 50%;
-    position: absolute;
-    top: -30px;
-    transform: translateX(-50%);
 
-    svg {
-      width: 50px;
-      transform: rotate(-180deg);
-
-      .cls-1 {
-        fill: $black--light!important;
-      }
-    }
-  }
-
-  .wrapper {
-    padding-top: $spacing-unit--xl;
-    padding-bottom: $spacing-unit--xl;
-    text-align: center;
-    @include breakpoint($tablet) {
-      padding-top: ($spacing-unit--xxl + $spacing-unit--s);
-      padding-bottom: ($spacing-unit--xxl + $spacing-unit--s);
-    }
-
-    img:first-child {
-      border-radius: 50%;
-      display: block;
-      height: 160px;
-      margin: 0 auto $spacing-unit;
-      position: relative;
-      width: 160px;
-    }
-
-    h2 {
-      color: $brand;
-      display: block;
-      margin: 0 auto;
-      padding: $spacing-unit--xs;
-      position: relative;
-      text-align: center;
-      width: 100%;
-    }
-  }
-
-  .container--content {
-    display: block;
-    margin: 0 auto;
-    max-width: 900px;
+  .glitch {
     position: relative;
-    width: 100%;
+    width: 170px;
+    height: 210px;
+    overflow: hidden;
+    margin: 0 auto;
 
-    p {
-      color: $brandDark;
+    @include breakpoint($tablet) {
+      width: $glitchWidth;
+      height: $glitchHeight;
     }
   }
 
-  .tot-section {
-    .wrapper {
-      padding: 30px 0;
-    }
-
-    a[data-module="accordion"] {
-      border-bottom: 2px solid $grey--light;
-      color: $black--light;
-      display: inline-block;
-      font-weight: 500;
-      padding: $spacing-unit--s $spacing-unit $spacing-unit--s 0;
-      position: relative;
-      text-align: left;
-      transition: color 0.2s ease;
-      width: 100%;
-
-      &:focus,
-      &:hover {
-        color: $brand;
-      }
-
-      &.active {
-        .icon {
-          transform: translateY(-50%) rotate(180deg);
-        }
-      }
-
-      .icon {
-        @include font-size(14, 0);
-        padding: 0;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        transition: transform 0.2s ease;
-
-        &:before {
-          @include font-size(14, 14);
-          margin: 0;
-        }
-      }
-    }
+  .glitch:hover {
+    cursor: pointer;
   }
 
-  div#football {
-    background: $grey--lightest;
-    border-radius: 0;
-    display: block;
+  .glitch__img {
+    position: absolute;
+    top: 0;
     left: 0;
-    height: auto;
     width: 100%;
-
-    img {
-      left: 0;
-      padding: 0;
-      margin: $spacing-unit--s 0;
-      max-width: 50px;
-      height: auto;
-      display: inline-block;
+    height: 100%;
+    background: url('/images/jjs-face.png') no-repeat 50% 0;
+    background-color: $blendColor1;
+    background-size: 90%;
+    background-blend-mode: $blendMode1;
+    @include breakpoint(max-width $tablet - 1) {
+      background-size: 80%;
     }
+  }
 
-    .table-header,
-    .table-item {
-      @include font-size(16,20);
-      color: $white;
-      display: flex;
-      text-align: center;
-      padding: $spacing-unit--s 0;
-      width: 100%;
+  /* Set the background colors for the glitch images*/
+  .glitch__img:nth-child(2) {
+    background-color: $blendColor2;
+    background-blend-mode: $blendMode2;
+  }
 
-      .losses,
-      .points,
-      .position,
-      .team,
-      .wins {
-        flex-basis: 20%;
-        max-width: 20%;
-      }
+  .glitch__img:nth-child(3) {
+    background-color: $blendColor3;
+    background-blend-mode: $blendMode3;
+  }
 
-      span {
-        @include font-size(12,18);
-        color: $blue--tottenham;
-        display: block;
-        font-weight: bold;
-        margin-bottom: $spacing-unit--s;
-        @include breakpoint($tablet) {
-          @include font-size(14,20);
-        }
+  .glitch__img:nth-child(4) {
+    background-color: $blendColor4;
+    background-blend-mode: $blendMode4;
+  }
 
-        &.number {
-          background: $white;
-          border-radius: 50%;
-          color: $blue--tottenham;
-          display: block;
-          height: 30px;
-          line-height: 30px!important;
-          margin: 0 auto;
-          width: 30px;
-        }
-      }
-    }
+  .glitch__img:nth-child(5) {
+    background-color: $blendColor5;
+    background-blend-mode: $blendMode5;
+  }
 
-    .table-header {
-      background: $grey--light;
+  .glitch__img:nth-child(n+2) {
+    opacity: 0;
+  }
 
-      span {
-        color: $blue--tottenham;
-        margin-bottom: 0;
-      }
-    }
+  .glitch__img:nth-child(n+2) {
+    opacity: 1;
+  }
 
-    .table-item {
-      align-items: center;
-      background: lighten($grey--lightest, 3%);
-      border-bottom: 1px solid $grey--light;
+  // .glitch__img:nth-child(2) {
+  //   transform: translate3d($gapHorizontal, 0, 0);
+  //   animation: glitch-anim-1-horizontal $timeAnim infinite linear alternate;
+  // }
 
-      &.spurs {
-        background: $blue--tottenham;
+  .glitch__img:nth-child(3) {
+    transform: translate3d(calc(-1 * $gapHorizontal), 0, 0);
+    animation: glitch-anim-2-horizontal $timeAnim infinite linear alternate;
+  }
 
-        .teamname {
-          color: $white;
-        }
-      }
+  .glitch__img:nth-child(4) {
+    transform: translate3d(0, calc(-1 * $gapVertical), 0) scale3d(-1, -1, 1);
+    animation: glitch-anim-3-horizontal $timeAnim infinite linear alternate;
+  }
 
-      .team {
-        span {
-          margin-bottom: 0;
-        }
-      }
+  /* Hover flash animation on last image */
+  .glitch__img:nth-child(5) {
+    animation: glitch-anim-flash 0.5s steps(1, end) infinite;
+  }
 
-      .teamname {
-        @include breakpoint(max-width ($tablet - 1)) {
-          @include font-size(12,12);
-        }
-      }
-    }
+}
+
+@keyframes glitch-anim-1-horizontal {
+  0% {
+    -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+
+  10% {
+    -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+
+  20% {
+    -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+
+  30% {
+    -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+
+  40% {
+    -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+
+  50% {
+    -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+
+  60% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+
+  70% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+
+  90% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+@keyframes glitch-anim-flash {
+  0% {
+    opacity: 0.2;
+    transform: translate3d($gapHorizontal, $gapVertical, 0);
+  } 33%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
   }
 }

@@ -1,51 +1,57 @@
 .music {
-  background: $black;
-  padding: 45px 0;
+  background: #fff;
+  padding: 20px 0 40px;
   position: relative;
+  text-align: center;
   @include breakpoint($tablet){
-    padding: 70px 0;
+    padding: 50px 0 70px;
   }
   h2 {
     display: inline-block;
-    color: $white;
+    color: $black;
     margin-bottom: $spacing-unit--l;
     width: 100%;
     @include breakpoint($tablet){
       margin-bottom: $spacing-unit--xl;
     }
     span {
-      color: $white;
+      color: $black;
     }
   }
 
   h4 {
-    @include font-size(20,20);
-    color: $white;
     margin-top: 0;
-    margin-bottom: $spacing-unit;
   }
   .wrapper{
     display: flex;
     flex-wrap: wrap;
   }
   #now-playing {
-    flex-basis: 100%;
-    max-width: 100%;
     position: relative;
     margin-top: $spacing-unit;
+    width: 100%;
     @include breakpoint($desktop){
-      flex-basis: 40%;
-      max-width: 40%;
-    }
-    @include breakpoint($medium-desktop){
-      flex-basis: 30%;
-      max-width: 30%;
       margin-top: 0;
     }
 
     .inner-container {
-      min-height: 200px;
-      position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        min-height: 200px;
+        position: relative;
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 
     .spinner {
@@ -63,13 +69,12 @@
     }
     .date {
       @include font-size(0,0);
-      background: $green--neon;
       box-sizing: border-box;
       color: $black;
-      padding: 14px 0;
+      padding: 4px 0;
       text-align: center;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 20px;
       .month {
         @include font-size(13,13);
         display: inline-block;
@@ -81,6 +86,7 @@
       }
       .day {
         @include font-size(13,13);
+        font-weight: 600;
       }
     }
     .container {
@@ -88,63 +94,56 @@
       display: flex;
       flex-wrap: wrap;
       .meta {
+        bottom: 0;
         flex-basis: 60px;
         max-width: 60px;
+        position: absolute;
+        right: 0;
       }
       .content {
-        flex-basis: 80%;
-        max-width: 80%;
+        flex-basis: 86%;
+        max-width: 86%;
       }
       p {
         @include font-size(14,14);
         margin-bottom: 0;
-        padding-right: $spacing-unit--xl;
+        padding-right: $spacing-unit--l;
         strong {
-          @include font-size(16,16);
+          @include font-size(15,15);
           display: block;
           margin-bottom: $spacing-unit--xs;
         }
       }
       #bars {
+        bottom: -5px;
         left: 0;
         margin: 0;
         position: relative;
-        top: 0;
       }
     }
     .music-artist {
-      border-top: 1px solid rgba($white, 0.2);
-      color: $green--neon;
-      text-align: left;
-      padding: 1rem;
+      background: #fff;
+      border:1px solid #dedede;
+      border-left: 3px solid #45e687;
+      color: $black;
+      flex-basis: 100%;
+      margin: 0;
       margin-bottom: 0;
-      &:nth-of-type(1) {
-        border-top: 0;
-        opacity: 1;
+      max-width: 100%;
+      padding: 1rem;
+      text-align: left;
+      @include breakpoint($medium-desktop) {
+        margin: 5px;
+        flex-basis: 48%;
+        max-width: 48%;
       }
-      &:nth-of-type(2) {
-        opacity: 0.8;
-      }
-      &:nth-of-type(3) {
-        opacity: 0.75;
-      }
-      &:nth-of-type(4) {
-        opacity: 0.7;
-      }
-      &:nth-of-type(5) {
-        opacity: 0.65;
-      }
-      &:nth-of-type(6) {
-        opacity: 0.6;
-      }
-      &:nth-of-type(7) {
-        opacity: 0.55;
-      }
-      &:nth-of-type(8) {
-        opacity: 0.5;
+      @include breakpoint($desktop) {
+        margin: 5px;
+        flex-basis: 31%;
+        max-width: 31%;
       }
       p {
-        color: $white;
+        color: $black;
         margin-top: 0;
       }
     }
@@ -187,7 +186,7 @@
         @include font-size(16,20);
         background: rgba($black,0.7);
         bottom: 0;
-        color: $white;
+        color: $black;
         left: 0;
         padding: 10px;
         position: absolute;
@@ -217,7 +216,7 @@
     }
     h4{
       @include font-size(20,25);
-      color: $white;
+      color: $black;
       display: block;
       margin: 20px auto;
       max-width: 300px;

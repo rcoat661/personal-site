@@ -6,20 +6,8 @@ module.exports = class MusicSection {
   constructor($el) {
     this.$el = $el;
     this.$spinner = this.$el.find('.spinner')
-    let musicContent = this.$el.find('#music-artists .inner-container');
     let nowPlayingItem = this.$el.find('#now-playing .inner-container');
     let getTracksJson = 'http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=rcoat661&api_key=0ee4715a1d3c20293f5511f76cd15bd2&format=json';
-
-    // get cached JSON from Last.fm
-    $.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=rcoat661&api_key=0ee4715a1d3c20293f5511f76cd15bd2&format=json', function(obj) {
-      $.each(obj, function(key, value) {
-        $.each(value.artist, function(index, item) {
-          if (index <= 5) {
-            musicContent.append('<div class="music-artist"><img src="' + value.artist[index].image[3]['#text'] + '" /><div class="name">' + value.artist[index].name + '</div></div>');
-          }
-        });
-      });
-    });
 
     this.onLoadList(nowPlayingItem, getTracksJson);
     this.loopThrough(nowPlayingItem, getTracksJson);
@@ -37,7 +25,7 @@ module.exports = class MusicSection {
               } else {
                 nowPlayingItem.append(this.listItem(item));
               }
-            } else if (index > 0 && index <= 7) {
+            } else if (index > 0 && index <= 11) {
               nowPlayingItem.append(this.listItem(item));
             }
           });
@@ -95,11 +83,14 @@ module.exports = class MusicSection {
     let day = date.getDate();
     let hrs = date.getHours();
     let mid = 'AM';
-    let newHrs = hrs - 4;
+    let newHrs = hrs > 12 ? hrs - 4 : hrs;
     if (newHrs > 12) {
         newHrs -= 12;
         mid = 'PM';
     } else {
+        if(newHrs <= 0 ){
+          newHrs += 4;
+        }
         mid = 'AM';
     }
     let mins = date.getMinutes();
