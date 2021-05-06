@@ -59,7 +59,7 @@
     "metalsmith-path": "^0.3.1",
     "pretty-hrtime": "^1.0.1",
     "require-dir": "^0.3.0",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "webpack": "^1.12.12",
     "yargs": "^4.7.1"
   },
